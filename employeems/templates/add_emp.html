@@ -1,0 +1,77 @@
+{% extends 'header.html'%}
+{%load static%}
+
+{% block content%}
+
+
+<div class="card shadow m-5">
+  <div class="card-body">
+    <h3 class="p-2" style="border-bottom:2px solid orange">Add An Employee!!!</h3>
+
+      <div class="container-fluid">
+      <form method="post" action="/add_emp/">
+        {% csrf_token %}
+
+        <div class="form-row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" class="form-control" value="{{first_name}}" placeholder="Enter First Name" pattern="[A-za-z]+">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" class="form-control" value="{{last_name}}" placeholder="Enter Last Name" pattern="[A-za-z]+">
+            </div>
+          </div>
+
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Salary</label>
+              <input type="number" name="salary" class="form-control" value="{{salary}}">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Department</label>
+              <input type="number" name="dept" class="form-control" value="{{dept}}">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Role</label>
+              <input type="number" name="role" class="form-control" value="{{role}}">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Bonus</label>
+              <input type="number" name="bonus" class="form-control" value="{{bonus}}">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="number" name="phone" class="form-control" value="{{phone}}">
+            </div>
+          </div>
+
+
+
+        </div>
+ <hr>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+
+  </div>
+</div>
+</div>
+{% endblock%}

@@ -1,0 +1,57 @@
+{% extends 'header.html'%}
+
+{% block content%}
+
+
+<div class="card shadow m-5">
+  <div class="card-body">
+    <h3 class="p-2" style="border-bottom:2px solid orange">Filter The Employees Details!!!</h3>
+
+      <div class="container-fluid">
+      <form method="post" action="/filter_emp/">
+        {% csrf_token %}
+
+        <div class="form-row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label>First Name/Last Name</label>
+              <input type="text" name="name" class="form-control" value="{{name}}" placeholder="Enter First Name" pattern="[A-za-z]+">
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label>Department</label>
+              <input type="text" name="dept" class="form-control" value="{{dept}}">
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label>Role</label>
+              <input type="text" name="role" class="form-control" value="{{role}}">
+            </div>
+          </div>
+
+
+
+
+
+
+
+        </div>
+ <hr>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+
+  </div>
+</div>
+</div>
+
+{% endblock%}

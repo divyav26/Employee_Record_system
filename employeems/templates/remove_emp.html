@@ -1,0 +1,23 @@
+{% extends 'header.html'%}
+{% block content%}
+
+<div class="card shadow m-5">
+  <div class="card-body">
+    <h3 class="p-2" style="border-bottom:2px solid orange">Choose Employee to remove!!!</h3>
+
+      <div class="container-fluid">
+          <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Choose Employee To Remove Their Data
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      {% for emp in emps%}
+    <li><a class="dropdown-item" href="/remove_emp/{{emp.id}}">{{emp.first_name}} {{emp.last_name}}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+      </div>
+  </div>
+</div>
+
+{% endblock%}
